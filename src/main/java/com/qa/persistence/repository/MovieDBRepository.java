@@ -41,9 +41,10 @@ public class MovieDBRepository implements MovieRepository {
 		Collection<Movie> movies = (Collection<Movie>) query.getResultList();
 
 		return util.getJSONForObject(movies);
+		
 	}
 	
-	public String findAnAccount(int movieID) {
+	public String findMovie(int movieID) {
 		return util.getJSONForObject(manager.find(Movie.class, movieID));
 	
 	}
@@ -52,18 +53,10 @@ public class MovieDBRepository implements MovieRepository {
 	@Transactional(TxType.REQUIRED)
 	@Override
 	public String deleteMovie(int movieID) {
-    Movie movie= manager.find(Movie.class, movieID);
-    manager.remove(movie);
-		return "{\"message\": \"movie sucessfully deleted\"}";
+		Movie movie= manager.find(Movie.class, movieID);
+	    manager.remove(movie);
+			return "{\"message\": \"Movie sucessfully deleted\"}";
 		
-//		Movie movieInDB = util.getObjectForJSON(getAMovie(id), Movie.class);
-//
-//		if (manager.contains(manager.find(Movie.class, id))) {
-//
-//			manager.remove(manager.find(Movie.class, id));
-//		}
-//		return "{\"message\": \"movie sucessfully deleted\"}";
-//		
 	}
 	@Transactional(TxType.REQUIRED)
 	@Override

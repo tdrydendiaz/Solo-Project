@@ -1,5 +1,7 @@
 package com.qa.persistence.domain;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,7 @@ public class Movie{
 	@Column (length = 20)
 	private String title;
 	@Column (length = 30)
-	private String releaseDate;
+	private Date releaseDate;
 	@Column (length = 30)
 	private int runTime;
 	@Column (length = 30)
@@ -23,7 +25,7 @@ public class Movie{
 	private int rating;
 	
 	
-	public Movie(int id, String title, String releaseDate, int runTime, String certification, int rating) {
+	public Movie(int id, String title, Date releaseDate, int runTime, String certification, int rating) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -33,6 +35,9 @@ public class Movie{
 		this.rating = rating;
 	}
 
+	public Movie() {
+		
+	}
 	public int getId() {
 		return id;
 	}
@@ -57,13 +62,13 @@ public class Movie{
 
 
 
-	public String getReleaseDate() {
+	public Date getReleaseDate() {
 		return releaseDate;
 	}
 
 
 
-	public void setReleaseDate(String releaseDate) {
+	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 
