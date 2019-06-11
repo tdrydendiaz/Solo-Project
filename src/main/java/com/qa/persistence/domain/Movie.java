@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class Movie{
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int movieID;
 	@Column (length = 20)
 	private String title;
 	@Column (length = 30)
@@ -27,7 +27,7 @@ public class Movie{
 	
 	public Movie(int id, String title, int releaseYear, int runTime, String certification, int rating) {
 		super();
-		this.id = id;
+		this.movieID = movieID;
 		this.title = title;
 		this.releaseYear = releaseYear;
 		this.runTime = runTime; 
@@ -38,16 +38,14 @@ public class Movie{
 	public Movie() {
 		
 	}
-	public int getId() {
-		return id;
+	
+	public int getMovieID() {
+		return movieID;
 	}
 
-
-
-	public void setId(int id) {
-		this.id = id;
+	public void setMovieID(int movieID) {
+		this.movieID = movieID;
 	}
-
 
 
 	public String getTitle() {

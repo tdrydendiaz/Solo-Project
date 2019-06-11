@@ -7,3 +7,4 @@ public interface MovieRepository {
 	String deleteMovie(int movieID);
 	String updateMovie(int movieID, String movie);
 }
+

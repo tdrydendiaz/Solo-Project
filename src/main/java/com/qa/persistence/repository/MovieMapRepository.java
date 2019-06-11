@@ -21,7 +21,7 @@ public class MovieMapRepository implements MovieRepository{
 
 	public String createMovie(String movie) {
 		Movie newMovie = new JSONUtil().getObjectForJSON(movie, Movie.class);
-		movieMap.put(newMovie.getId(), newMovie);
+		movieMap.put(newMovie.getMovieID(), newMovie);
 		return "Movie successfuly created";
 	}
 
