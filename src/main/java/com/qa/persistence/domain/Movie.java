@@ -16,7 +16,7 @@ public class Movie{
 	@Column (length = 20)
 	private String title;
 	@Column (length = 30)
-	private Date releaseDate;
+	private int releaseYear;
 	@Column (length = 30)
 	private int runTime;
 	@Column (length = 30)
@@ -25,12 +25,12 @@ public class Movie{
 	private int rating;
 	
 	
-	public Movie(int id, String title, Date releaseDate, int runTime, String certification, int rating) {
+	public Movie(int id, String title, int releaseYear, int runTime, String certification, int rating) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.releaseDate = releaseDate;
-		this.runTime = runTime;
+		this.releaseYear = releaseYear;
+		this.runTime = runTime; 
 		this.certification = certification;
 		this.rating = rating;
 	}
@@ -62,14 +62,14 @@ public class Movie{
 
 
 
-	public Date getReleaseDate() {
-		return releaseDate;
+	public int getReleaseYear() {
+		return releaseYear;
 	}
 
 
 
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
+	public void setReleaseYear(int releaseYear) {
+		this.releaseYear = releaseYear;
 	}
 
 

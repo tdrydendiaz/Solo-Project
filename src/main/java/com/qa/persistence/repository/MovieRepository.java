@@ -6,6 +6,4 @@ public interface MovieRepository {
 	String createMovie(String movie);
 	String deleteMovie(int movieID);
 	String updateMovie(int movieID, String movie);
-
-	
 }
