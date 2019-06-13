@@ -1,7 +1,5 @@
 package com.qa.persistence.domain;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +23,7 @@ public class Movie{
 	private int rating;
 	
 	
-	public Movie(int id, String title, int releaseYear, int runTime, String certification, int rating) {
+	public Movie(int movieID, String title, int releaseYear, int runTime, String certification, int rating) {
 		super();
 		this.movieID = movieID;
 		this.title = title;
