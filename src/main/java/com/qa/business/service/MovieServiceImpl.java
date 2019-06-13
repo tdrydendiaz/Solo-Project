@@ -28,8 +28,13 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public String updateClassroom(int movieID, String movie) {
+	public String updateMovie(int movieID, String movie) {
 		return repo.updateMovie(movieID, movie);
+	}
+
+	@Override
+	public String getAMovie(int movieID) {
+		return repo.getAMovie(movieID);
 	}
 
 }
