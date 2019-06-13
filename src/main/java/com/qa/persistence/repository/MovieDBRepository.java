@@ -64,4 +64,11 @@ public class MovieDBRepository implements MovieRepository {
 		
 		return null;
 	}
+
+
+	@Override
+	public String getAMovie(int movieID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
