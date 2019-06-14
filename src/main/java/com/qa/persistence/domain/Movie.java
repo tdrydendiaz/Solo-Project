@@ -24,7 +24,7 @@ public class Movie{
 	
 	
 	public Movie(int movieID, String title, int releaseYear, int runTime, String certification, int rating) {
-		super();
+		super(); 
 		this.movieID = movieID;
 		this.title = title;
 		this.releaseYear = releaseYear;
