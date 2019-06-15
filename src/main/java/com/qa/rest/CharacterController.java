@@ -27,8 +27,8 @@ public class CharacterController {
 	@Path("/getACharacter/{id}")
 	@GET
 	@Produces({ "application/json" })
-	public String getACharacter(@PathParam("id") int characterID) {
-		return service.getACharacter(characterID);
+	public String getACharacter(@PathParam("id") int id) {
+		return service.getACharacter(id);
 	}
 
 	@Path("/createCharacter")
