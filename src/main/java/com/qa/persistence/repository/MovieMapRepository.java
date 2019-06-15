@@ -13,8 +13,9 @@ public class MovieMapRepository implements MovieRepository{
 	
 	Map<Integer, Movie> movieMap = new HashMap<Integer, Movie>();
     private JSONUtil util= new JSONUtil();
+    
 	public String getAllMovies() {
-
+		
 		return util.getJSONForObject(movieMap); 
 		
 	}
@@ -27,7 +28,7 @@ public class MovieMapRepository implements MovieRepository{
 	public String createMovie(String movie) {
 		Movie newMovie = util.getObjectForJSON(movie, Movie.class);
 		movieMap.put(newMovie.getMovieID(), newMovie);
-		return "Movie successfuly created";
+		return "Movie successfully created";
 	}
 	
 
