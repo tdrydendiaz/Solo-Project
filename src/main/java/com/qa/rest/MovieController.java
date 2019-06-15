@@ -17,7 +17,6 @@ public class MovieController {
 
 	@Inject
 	private MovieService service;
-
 	@Path("/getAllMovies")
 	@GET
 	@Produces({ "application/json" })
