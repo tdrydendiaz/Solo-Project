@@ -29,4 +29,10 @@ public class CharacterServiceImpl implements CharacterService {
 		return repo.updateCharacter(characterID, character);
 	}
 
+	@Override
+	public String getACharacter(int characterID) {
+		return repo.getACharacter(characterID);
+
+	}
+
 }
