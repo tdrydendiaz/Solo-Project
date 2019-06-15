@@ -55,4 +55,10 @@ public class CharacterDBRepository implements CharacterRepository {
 		return null;
 	}
 
+	@Override
+	public String getACharacter(int characterID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
