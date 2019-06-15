@@ -18,12 +18,18 @@ public class MovieMapRepository implements MovieRepository{
 		return util.getJSONForObject(movieMap); 
 		
 	}
+	
+	@Override
+	public String getAMovie(int movieID) {
+		return util.getJSONForObject(movieMap.get(movieID));
+	}
 
 	public String createMovie(String movie) {
-		Movie newMovie = new JSONUtil().getObjectForJSON(movie, Movie.class);
+		Movie newMovie = util.getObjectForJSON(movie, Movie.class);
 		movieMap.put(newMovie.getMovieID(), newMovie);
 		return "Movie successfuly created";
 	}
+	
 
 	public String deleteMovie(int movieID) {
 		movieMap.remove((Integer)movieID);
@@ -31,16 +37,16 @@ public class MovieMapRepository implements MovieRepository{
 	}
 
 	public String updateMovie(int movieID, String movie) {
-		Movie movieToUpdate = new JSONUtil().getObjectForJSON(movie, Movie.class);
+		Movie movieToUpdate = util.getObjectForJSON(movie, Movie.class);
 		movieMap.put(movieID, movieToUpdate);
 		
 		return "Movie successfully updated";
 	}
 	
-	public long cycleAccounts(String aName) {
-		
-		return 0L;
-	}
+//	public long cycleAccounts(String aName) {
+//		
+//		return 0L;
+//	}
 	
 	public Map<Integer, Movie> getMovieMap() {
 		return movieMap;
@@ -50,22 +56,19 @@ public class MovieMapRepository implements MovieRepository{
 		this.movieMap = movieMap;
 	}
 
-	public int findTitle(String string) {
-		
-		int count = 0;
+//	public int findTitle(String string) {
+//		
+//		int count = 0;
+//
+//		for (Movie aMovie : movieMap.values()) {
+//			if (aMovie.getTitle().equals(string)) {
+//				System.out.println(count++); 
+//			};
+//		} 
+//		 return count;
+//	}
 
-		for (Movie aMovie : movieMap.values()) {
-			if (aMovie.getTitle().equals(string)) {
-				System.out.println(count++); 
-			};
-		} 
-		 return count;
-	}
-
-	@Override
-	public String getAMovie(int movieID) {
-		return util.getJSONForObject(movieMap.get(movieID));
-	}
+	
 	
 
 }
