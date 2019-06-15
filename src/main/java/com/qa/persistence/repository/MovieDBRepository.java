@@ -44,7 +44,7 @@ public class MovieDBRepository implements MovieRepository {
 		
 	}
 	
-	public String findMovie(int movieID) {
+	public String getAMovie(int movieID) {
 		return util.getJSONForObject(manager.find(Movie.class, movieID));
 	
 	}
@@ -65,10 +65,4 @@ public class MovieDBRepository implements MovieRepository {
 		return null;
 	}
 
-
-	@Override
-	public String getAMovie(int movieID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

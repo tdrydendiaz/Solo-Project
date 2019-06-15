@@ -27,8 +27,8 @@ public class MovieController {
 	@Path("/getAMovie/{id}")
 	@GET
 	@Produces({ "application/json" })
-	public String getAMovie(@PathParam("id") int movieID) {
-		return service.getAMovie(movieID);
+	public String getAMovie(@PathParam("id") int id) {
+		return service.getAMovie(id);
 	}
 
 	@Path("/createMovie")
@@ -41,15 +41,15 @@ public class MovieController {
 	@Path("/deleteMovie/{id}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String deleteMovie(@PathParam("id") int movieID) {
-		return service.deleteMovie(movieID);
+	public String deleteMovie(@PathParam("id") int id) {
+		return service.deleteMovie(id);
 	}
 	
 	@Path("/updateMovie/{id}")
 	@PUT
 	@Produces({ "application/json" })
-	public String updateMovie(@PathParam("id") int movieID, String movie) {
-		return service.updateMovie(movieID, movie);
+	public String updateMovie(@PathParam("id") int id, String movie) {
+		return service.updateMovie(id, movie);
 	}
 	
 	
