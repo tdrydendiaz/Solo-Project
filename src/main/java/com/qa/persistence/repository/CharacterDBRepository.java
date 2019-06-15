@@ -73,8 +73,7 @@ public class CharacterDBRepository implements CharacterRepository {
 //			return "{\"message\": \"Character successfully updated\"}";
 //		} else {
 //			return "{\"message\": \"cannot find Character\"}";
-//		}
-		return null;
+ return null;
 		
 	}
 
