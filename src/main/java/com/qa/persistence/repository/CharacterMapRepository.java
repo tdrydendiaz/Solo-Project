@@ -3,10 +3,12 @@ package com.qa.persistence.repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
+
 import com.qa.persistence.domain.*;
 import com.qa.persistence.domain.Character;
 import com.qa.util.JSONUtil;
-
+@Alternative
 public class CharacterMapRepository implements CharacterRepository{
 
 	Map<Integer, Character> characterMap = new HashMap<Integer, Character>();
@@ -42,5 +44,11 @@ public class CharacterMapRepository implements CharacterRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public Map<Integer, Character> getCharacterMap() {
+		return characterMap;
+	}
 
+	public void setCharacterMap(Map<Integer, Character> characterMap) {
+		this.characterMap = characterMap;
+	}
 }
