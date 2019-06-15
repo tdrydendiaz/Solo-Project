@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.enterprise.inject.Alternative;
 
-import com.qa.persistence.domain.*;
 import com.qa.persistence.domain.Character;
 import com.qa.util.JSONUtil;
 @Alternative

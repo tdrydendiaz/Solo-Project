@@ -12,10 +12,10 @@ import com.qa.util.JSONUtil;
 public class MovieMapRepository implements MovieRepository{
 	
 	Map<Integer, Movie> movieMap = new HashMap<Integer, Movie>();
-
+    private JSONUtil util= new JSONUtil();
 	public String getAllMovies() {
 
-		return new JSONUtil().getJSONForObject(movieMap); 
+		return util.getJSONForObject(movieMap); 
 		
 	}
 
@@ -64,8 +64,7 @@ public class MovieMapRepository implements MovieRepository{
 
 	@Override
 	public String getAMovie(int movieID) {
-		// TODO Auto-generated method stub
-		return null;
+		return util.getJSONForObject(movieMap.get(movieID));
 	}
 	
 
