@@ -35,7 +35,7 @@ public class CharacterServiceTest {
 	public void updateMovieTest() {
 
 		cmr.getCharacterMap().put(1, char1);
-		cmr.updateCharacter(1, "{\"characterID\":1,\"characterName\":\"Luke Skywalker\",\"actorName\":\"Mark Hamill\",\"powerRating\":\"90\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}");
+		cmr.updateCharacter(1, "{\"characterID\":1,\"characterName\":\"Luke Skywalker\",\"actorName\":\"Mark Hamill\",\"morality\":\"Hero\",\"powerRating\":\"90\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}");
 		assertEquals("Male", cmr.getCharacterMap().get(1).getGender());
 	}
  
@@ -46,9 +46,22 @@ public class CharacterServiceTest {
 
 		cmr.deleteCharacter(1);
 		assertEquals(false, cmr.getCharacterMap().containsKey(1));
-
 	}
- 
+ 	
+	@Test
+	public void getACharacterTest() {
+		cmr.getCharacterMap().put(1, char1);
+		cmr.getCharacterMap().put(2, char2);
+		assertEquals("{\"characterID\":2,\"characterName\":\"Darth Vader\",\"actorName\":\"David Prowse\",\"powerRating\":\"85\",\"morality\":\"Villain\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}", cmr.getACharacter(1));
+	}
+	
+	@Test
+	public void getACharacterTest1() {
+		cmr.getCharacterMap().put(1, char1);
+		cmr.getCharacterMap().put(2, char2);
+		assertEquals("null", cmr.getACharacter(10));
+	}
+	
  @Test
 	public void addCharacterTest() {
 		String charToCreate = jsonUtil.getJSONForObject(char1);

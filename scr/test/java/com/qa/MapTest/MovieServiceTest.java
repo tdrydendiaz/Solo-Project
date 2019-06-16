@@ -33,6 +33,12 @@ public class MovieServiceTest {
 	}
  
  @Test
+	public void getAMovieTest() {
+		mmr.getMovieMap().put(1, movie1);
+		mmr.getMovieMap().put(2, movie2);
+		assertEquals("null", mmr.getAMovie(10));
+	}
+ @Test
 	public void updateMovieTest() {
 
 		mmr.getMovieMap().put(1, movie1);
@@ -57,9 +63,6 @@ public class MovieServiceTest {
 		assertEquals(mmr.createMovie(movieToCreate), "Movie successfuly created");
 		assertEquals(mmr.getMovieMap().size(), 1);
 	}
- 
-//	String getAMovie(int movieID); <- still need to do this
- 
-        
+    
 
 }
