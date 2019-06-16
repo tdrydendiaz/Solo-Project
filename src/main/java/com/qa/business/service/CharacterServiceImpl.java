@@ -13,6 +13,11 @@ public class CharacterServiceImpl implements CharacterService {
 	public String getAllCharacters() {
 		return repo.getAllCharacters();
 	}
+	@Override
+	public String getACharacter(int characterID) {
+		return repo.getACharacter(characterID);
+
+	}
 
 	@Override
 	public String createCharacter(String character) {
@@ -29,10 +34,6 @@ public class CharacterServiceImpl implements CharacterService {
 		return repo.updateCharacter(characterID, character);
 	}
 
-	@Override
-	public String getACharacter(int characterID) {
-		return repo.getACharacter(characterID);
-
-	}
+	
 
 }

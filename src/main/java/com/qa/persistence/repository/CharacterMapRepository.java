@@ -11,16 +11,20 @@ import com.qa.util.JSONUtil;
 public class CharacterMapRepository implements CharacterRepository{
 
 	Map<Integer, Character> characterMap = new HashMap<Integer, Character>();
-	
+	private JSONUtil util=new JSONUtil();
 	@Override
 	public String getAllCharacters() {
-		return new JSONUtil().getJSONForObject(characterMap); 
+		return util.getJSONForObject(characterMap); 
 	}
 
 	@Override
+	public String getACharacter(int characterID) {
+		return util.getJSONForObject(characterMap.get(characterID));
+	}
+	@Override
 	public String createCharacter(String character) {
-		Character newCharacter = new JSONUtil().getObjectForJSON(character, Character.class);
-		characterMap.put(newCharacter.getCharacterID() , newCharacter);
+		Character newCharacter = util.getObjectForJSON(character, Character.class);
+		characterMap.put(newCharacter.getCharacterID(), newCharacter);
 		return "Character successfuly created";
 	}
 
@@ -38,11 +42,7 @@ public class CharacterMapRepository implements CharacterRepository{
 		return "Character successfully updated";
 	}
 
-	@Override
-	public String getACharacter(int characterID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	public Map<Integer, Character> getCharacterMap() {
 		return characterMap;
 	}

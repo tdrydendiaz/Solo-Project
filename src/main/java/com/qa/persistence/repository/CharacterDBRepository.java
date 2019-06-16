@@ -1,4 +1,5 @@
 package com.qa.persistence.repository;
+import com.qa.persistence.domain.Character;
 
 import java.util.Collection;
 
@@ -22,18 +23,24 @@ public class CharacterDBRepository implements CharacterRepository {
 	private EntityManager manager;
 	
 	
-	@Transactional(TxType.REQUIRED)
+//	@Transactional(TxType.REQUIRED)
 	@Override
 	public String getAllCharacters() {
 		Query query = manager.createQuery("SELECT a FROM Characters a ORDER BY characterID");
 
-//		@SuppressWarnings("unchecked")
+
 		Collection<Character> character = (Collection<Character>) query.getResultList();
 
 		return util.getJSONForObject(character);
 	}
+	
+	@Override
+	public String getACharacter(int characterID) {
+		return util.getJSONForObject(manager.find(Character.class, characterID));
+	}
 
 	@Override
+	@Transactional(TxType.REQUIRED)
 	public String createCharacter(String character) {
 		new JSONUtil();
 		Character util = JSONUtil.getObjectForJSON(character, Character.class);
@@ -43,6 +50,7 @@ public class CharacterDBRepository implements CharacterRepository {
 
 
 	@Override
+	@Transactional(TxType.REQUIRED)
 	public String deleteCharacter(int characterID) {
 		Character character= manager.find(Character.class, characterID);
 	    manager.remove(character);
@@ -50,15 +58,22 @@ public class CharacterDBRepository implements CharacterRepository {
 	}
 
 	@Override
+	@Transactional(TxType.REQUIRED)
 	public String updateCharacter(int characterID, String character) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getACharacter(int characterID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+		Character charToUpdate = manager.find(Character.class, characterID);
+		Character updatedChar = util.getObjectForJSON(character, Character.class);
+		if (charToUpdate != null) {
+			charToUpdate.setCharacterName(updatedChar.getCharacterName());
+			charToUpdate.setActorName(updatedChar.getActorName());
+			charToUpdate.setPowerRating(updatedChar.getPowerRating());
+			charToUpdate.setMorality(updatedChar.getMorality());
+			charToUpdate.setGender(updatedChar.getGender());
+			charToUpdate.setHomeworld(updatedChar.getHomeworld());
+			
+			manager.persist(charToUpdate);
+			return "{\"message\": \"Character successfully updated\"}";
+		} else {
+			return "{\"message\": \"cannot find Character\"}";
+			}
+}
 }
