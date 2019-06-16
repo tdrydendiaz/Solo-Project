@@ -1,4 +1,5 @@
 package com.qa.persistence.repository;
+import com.qa.persistence.domain.Character;
 
 import java.util.Collection;
 
@@ -59,24 +60,20 @@ public class CharacterDBRepository implements CharacterRepository {
 	@Override
 	@Transactional(TxType.REQUIRED)
 	public String updateCharacter(int characterID, String character) {
-//		Character charToUpdate = manager.find(Character.class, characterID);
-//		Character updatedChar = util.getObjectForJSON(character, Character.class);
-//		if (charToUpdate != null) {
-//			charToUpdate.setName(updatedChar.getCharacterName());
-//			charToUpdate.setCategory(updatedChar.getActorName());
-//			charToUpdate.setQuantity(updatedChar.getPowerRating());
-//			charToUpdate.setThreshold(updatedChar.getMorality());
-//			charToUpdate.setExpiryDate(updatedChar.getGender());
-//			charToUpdate.setExpiryDate(updatedChar.getHomeworld());
-//			
-//			manager.persist(charToUpdate);
-//			return "{\"message\": \"Character successfully updated\"}";
-//		} else {
-//			return "{\"message\": \"cannot find Character\"}";
- return null;
-		
-	}
-
-	
-
+		Character charToUpdate = manager.find(Character.class, characterID);
+		Character updatedChar = util.getObjectForJSON(character, Character.class);
+		if (charToUpdate != null) {
+			charToUpdate.setCharacterName(updatedChar.getCharacterName());
+			charToUpdate.setActorName(updatedChar.getActorName());
+			charToUpdate.setPowerRating(updatedChar.getPowerRating());
+			charToUpdate.setMorality(updatedChar.getMorality());
+			charToUpdate.setGender(updatedChar.getGender());
+			charToUpdate.setHomeworld(updatedChar.getHomeworld());
+			
+			manager.persist(charToUpdate);
+			return "{\"message\": \"Character successfully updated\"}";
+		} else {
+			return "{\"message\": \"cannot find Character\"}";
+			}
+}
 }
