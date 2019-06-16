@@ -52,7 +52,7 @@ public class CharacterServiceTest {
 	public void getACharacterTest() {
 		cmr.getCharacterMap().put(1, char1);
 		cmr.getCharacterMap().put(2, char2);
-		assertEquals("{\"characterID\":2,\"characterName\":\"Darth Vader\",\"actorName\":\"David Prowse\",\"powerRating\":\"85\",\"morality\":\"Villain\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}", cmr.getACharacter(1));
+		assertEquals("{\"characterID\":2,\"characterName\":\"Darth Vader\",\"actorName\":\"David Prowse\",\"powerRating\":85,\"morality\":\"Villain\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}", cmr.getACharacter(2));
 	}
 	
 	@Test

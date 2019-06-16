@@ -1,7 +1,7 @@
 package com.qa.MapTest;
 
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -52,7 +52,7 @@ public class MovieServiceTest {
 		mmr.getMovieMap().put(1, movie1);
 
 		mmr.deleteMovie(1);
-		assertEquals(false, mmr.getMovieMap().containsKey(1));
+		assertFalse(mmr.getMovieMap().containsKey(1));
 
 	}
  
@@ -60,8 +60,8 @@ public class MovieServiceTest {
 	public void addMovieTest() {
 		String movieToCreate = jsonUtil.getJSONForObject(movie1);
 		System.out.println(movieToCreate);
-		assertEquals(mmr.createMovie(movieToCreate), "Movie successfuly created");
-		assertEquals(mmr.getMovieMap().size(), 1);
+		assertEquals("Movie successfully created",mmr.createMovie(movieToCreate));
+		assertEquals(1, mmr.getMovieMap().size());
 	}
     
 
