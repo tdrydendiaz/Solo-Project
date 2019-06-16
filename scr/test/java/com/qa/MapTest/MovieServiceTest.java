@@ -56,7 +56,6 @@ public class MovieServiceTest {
 		System.out.println(movieToCreate);
 		assertEquals(mmr.createMovie(movieToCreate), "Movie successfuly created");
 		assertEquals(mmr.getMovieMap().size(), 1);
-
 	}
  
 //	String getAMovie(int movieID); <- still need to do this
