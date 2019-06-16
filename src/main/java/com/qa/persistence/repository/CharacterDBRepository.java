@@ -26,7 +26,7 @@ public class CharacterDBRepository implements CharacterRepository {
 //	@Transactional(TxType.REQUIRED)
 	@Override
 	public String getAllCharacters() {
-		Query query = manager.createQuery("SELECT a FROM Characters a ORDER BY characterID");
+		Query query = manager.createQuery("SELECT a FROM Character a ORDER BY characterID");
 
 
 		Collection<Character> character = (Collection<Character>) query.getResultList();
