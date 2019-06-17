@@ -4,4 +4,4 @@ INSERT INTO Movie (movieID, title, releaseYear, runTime, certification, rating) 
 INSERT INTO Movie (movieID, title, releaseYear, runTime, certification, rating) VALUES (4, 'A new Hope', 1977, 125, 'PG', 93);
 
 
-INSERT INTO CHARACTER (characterID, characterName, actorName, powerRating, morality, gender, homeworld) VALUES (1, ' ', ' ', 56, ' ', ' ', ' ');
+INSERT INTO CHARACTER (characterID, characterName, actorName, powerRating, morality, gender, homeworld) VALUES (1, 'Luke Skywalker', 'Mark Hamill', 56, 'Hero', 'Male', 'Tatooine');
