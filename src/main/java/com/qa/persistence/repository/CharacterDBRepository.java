@@ -76,4 +76,12 @@ public class CharacterDBRepository implements CharacterRepository {
 			return "{\"message\": \"cannot find Character\"}";
 			}
 }
+
+		public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+	public void setUtil(JSONUtil jsonUtil) {
+		this.util = jsonUtil;
+	}
 }

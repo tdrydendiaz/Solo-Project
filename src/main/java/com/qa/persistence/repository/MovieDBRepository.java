@@ -76,5 +76,16 @@ public class MovieDBRepository implements MovieRepository {
 			return "{\"message\": \"Cannot find movie\"}";
 		}
 	}
+	
+	
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+	public void setUtil(JSONUtil jsonUtil) {
+		this.util = jsonUtil;
+	}
+	
+	
 
 }
