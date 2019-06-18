@@ -70,4 +70,10 @@ public class CharacterDBRepositoryTest {
 		String reply = repo.deleteCharacter(1);
 		Assert.assertEquals("{\"message\": \"character successfully deleted\"}", reply);
 	}
+	
+//	@Test
+//	public void testUpdateCharacter() {
+//		String reply = repo.updateCharacter(1, MOCK_OBJECT);
+//		
+//	}
 }
