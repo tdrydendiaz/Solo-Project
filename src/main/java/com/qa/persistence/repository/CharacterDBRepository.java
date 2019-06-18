@@ -1,4 +1,5 @@
 package com.qa.persistence.repository;
+import com.qa.business.service.CharacterService;
 import com.qa.persistence.domain.Character;
 
 import java.util.Collection;
@@ -84,4 +85,6 @@ public class CharacterDBRepository implements CharacterRepository {
 	public void setUtil(JSONUtil jsonUtil) {
 		this.util = jsonUtil;
 	}
+
+	
 }

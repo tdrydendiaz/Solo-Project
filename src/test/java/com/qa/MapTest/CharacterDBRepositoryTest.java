@@ -1,5 +1,6 @@
 package com.qa.MapTest;
 import com.qa.persistence.domain.Character;
+import com.qa.persistence.domain.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,9 +72,19 @@ public class CharacterDBRepositoryTest {
 		Assert.assertEquals("{\"message\": \"character successfully deleted\"}", reply);
 	}
 	
-//	@Test
-//	public void testUpdateCharacter() {
-//		String reply = repo.updateCharacter(1, MOCK_OBJECT);
-//		
-//	}
+
+	@Test 
+	public void updateCharacterIfExists(){
+		Character character1 = new Character(1,"Luke Skywalker","Mark Hamill",90, "Hero","Male","Tatooine");
+		Mockito.when(manager.find(Mockito.any(), Mockito.anyInt())).thenReturn(character1);
+		String reply = repo.updateCharacter(1, MOCK_OBJECT);
+		Assert.assertEquals("{\"message\": \"Character successfully updated\"}", reply);
+	}
+	
+	
+	@Test
+	public void testUpdateCharacterDoesntExistIfDoesNotExist() {
+		String reply = repo.updateCharacter(45, MOCK_OBJECT);
+		Assert.assertEquals("{\"message\": \"cannot find Character\"}", reply);
+	}
 }
