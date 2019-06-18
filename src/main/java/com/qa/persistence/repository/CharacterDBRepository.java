@@ -45,7 +45,7 @@ public class CharacterDBRepository implements CharacterRepository {
 		new JSONUtil();
 		Character util = JSONUtil.getObjectForJSON(character, Character.class);
 		manager.persist(util);
-		return "{\"message\": \"character sucessfully added\"}";
+		return "{\"message\": \"character successfully added\"}";
 	}
 
 
@@ -54,7 +54,7 @@ public class CharacterDBRepository implements CharacterRepository {
 	public String deleteCharacter(int characterID) {
 		Character character= manager.find(Character.class, characterID);
 	    manager.remove(character);
-			return "{\"message\": \"character sucessfully deleted\"}";
+			return "{\"message\": \"character successfully deleted\"}";
 	}
 
 	@Override

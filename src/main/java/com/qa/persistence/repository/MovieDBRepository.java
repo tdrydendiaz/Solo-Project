@@ -30,7 +30,7 @@ public class MovieDBRepository implements MovieRepository {
 		new JSONUtil();
 		Movie util = JSONUtil.getObjectForJSON(movie, Movie.class);
 		manager.persist(util);
-		return "{\"message\": \"movie sucessfully added\"}";
+		return "{\"message\": \"movie successfully added\"}";
 	}
 
 	
@@ -55,7 +55,7 @@ public class MovieDBRepository implements MovieRepository {
 	public String deleteMovie(int movieID) {
 		Movie movie= manager.find(Movie.class, movieID);
 	    manager.remove(movie);
-	    return "{\"message\": \"Movie sucessfully deleted\"}";
+	    return "{\"message\": \"Movie successfully deleted\"}";
 			
 		
 	}

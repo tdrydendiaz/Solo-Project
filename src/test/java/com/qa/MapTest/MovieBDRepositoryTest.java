@@ -34,7 +34,7 @@ public class MovieBDRepositoryTest {
 
 	private JSONUtil util;
 	
-	private static final String MOCK_DATA_ARRAY = "[{\"movieID\":\"1\",\"title\":\"The Phantom Menance\",\"releaseYear\":\"1999\",\"runTime\":\"133\",\"certification\":\"PG\",\"rating\":\"54\"}]";
+	private static final String MOCK_DATA_ARRAY = "[{\"movieID\":1,\"title\":\"The Phantom Menance\",\"releaseYear\":1999,\"runTime\":133,\"certification\":\"PG\",\"rating\":54}]";
 
 	private static final String MOCK_OBJECT =  "{\"movieID\":1,\"title\":\"The Phantom Menance\",\"releaseYear\":\"1999\",\"runTime\":\"133\",\"certification\":\"PG\",\"rating\":\"54\"}";
 	
@@ -46,28 +46,28 @@ public class MovieBDRepositoryTest {
 		repo.setUtil(util);
 	}
 
-//	@Test
-//	public void testGetAllMovies() {
-//		Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
-//		List<Movie> movies = new ArrayList<Movie>();
-//		movies.add(new Movie(1, "The Phantom Menance",1999,133,"PG",54));
-//		Mockito.when(query.getResultList()).thenReturn(movies);
-//		System.out.println(repo.getAllMovies());
-//		Assert.assertEquals(MOCK_DATA_ARRAY, repo.getAllMovies());
-//	}
+	@Test
+	public void testGetAllMovies() {
+		Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
+		List<Movie> movies = new ArrayList<Movie>();
+		movies.add(new Movie(1,"The Phantom Menance",1999,133,"PG",54));
+		Mockito.when(query.getResultList()).thenReturn(movies);
+		System.out.println(repo.getAllMovies());
+		Assert.assertEquals(MOCK_DATA_ARRAY, repo.getAllMovies());
+	}
 
 	
 
 	@Test
 	public void testCreateMovie() {
 		String reply = repo.createMovie(MOCK_OBJECT);
-		Assert.assertEquals(reply, "{\"message\": \"movie sucessfully added\"}");
+		Assert.assertEquals("{\"message\": \"movie successfully added\"}", reply);
 	}
 
 	@Test
 	public void testDeleteMovie() {
 		String reply = repo.deleteMovie(1);
-		Assert.assertEquals(reply, "{\"message\": \"Movie sucessfully deleted\"}");
+		Assert.assertEquals("{\"message\": \"Movie successfully deleted\"}", reply);
 	}
 
 
