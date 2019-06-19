@@ -105,14 +105,5 @@ public class Movie{
 	}
 
 
-
-	
-
-
-
-//	@Override
-//    public String toString() {
-//    	return String.format(firstName + " " + lastName + " owns " + accountNumber);
-//    }
 	
 }

@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.qa.business.service.CharacterService;
+import com.qa.business.service.MovieService;
 
 @Path("/character")
 public class CharacterController {
@@ -52,7 +53,9 @@ public class CharacterController {
 		return service.updateCharacter(characterID, character);
 	}
 	
-	
+	public void setService(CharacterService service) {
+		this.service = service;
+	}
 }
 
 
