@@ -33,14 +33,22 @@
 <input type="button" class="btn" onclick="deleteMovie()" value="Delete a Movie" >
 <input type="number" id="inputno">   
 
-<br>
-<input type="button" class="btn" onclick="updateMovie()" value="Update a Movie" >
-<input type="number" id="id">
-<input type="text" id="titl">
-<input type="number" id="ry">
-<input type="number" id="rt">
-<input type="text" id="cer">
-<input type="number" id="rat">
+
+
+  <br>
+  <div>
+    <input id="updateId" type="number">
+    <input id="updateTitle" type="text">
+    <input id="updateYear" type="number">
+    <input id="updateRun" type="number">
+    <input id="updateCert" type="text">
+    <input id="updateRat" type="number">
+    <input type="button" value="Update a movie" onclick="updateMovie(updateId)">
+  </div>
+
+  <div>
+    <input type="button" value="create an account" onclick="createMovie()">
+  </div>
                 <div id="result"> </div>
                 
             </form>
