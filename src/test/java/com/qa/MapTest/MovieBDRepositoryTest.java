@@ -71,26 +71,27 @@ public class MovieBDRepositoryTest {
 		Assert.assertEquals("{\"message\": \"Movie successfully deleted\"}", reply);
 	}
 
-	
+//	
 //	@Test
 //	public void testGetAMovie() {
 //		Movie movie1 = new Movie(1,"The Phantom Menance", 1999, 133, "PG", 54);
 //		Mockito.when(manager.find(Movie.class, 1)).thenReturn(movie1);
 //		Assert.assertEquals(MOCK_OBJECT, repo.getAMovie(1));
 //	}
+//	
 	
-//	private static final Movie movie1 = new Movie(1,"The Phantom Menance", 1999, 133, "PG", 54);
-//	@Test 
-//	public void testGetAMovie() {
-//	Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
-//	List<Movie> movie = new ArrayList<Movie>();
-//	movie.add(new Movie(1,"The Phantom Menance", 1999, 133, "PG", 54));
-//	Mockito.when(query.getResultList()).thenReturn(movie);
-//	Mockito.when(manager.find(Movie.class, 1)).thenReturn(movie1);
-//	System.out.println(repo.getAMovie(1));
-//		
-//	Assert.assertEquals(MOCK_OBJECT, repo.getAMovie(1));
-//	}
+	private static final Movie movie1 = new Movie(1,"The Phantom Menance", 1999, 133, "PG", 54);
+	@Test 
+	public void testGetAMovie() {
+	Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
+	List<Movie> movie = new ArrayList<Movie>();
+	movie.add(new Movie(1,"The Phantom Menance", 1999, 133, "PG", 54));
+	Mockito.when(query.getResultList()).thenReturn(movie);
+	Mockito.when(manager.find(Movie.class, 1)).thenReturn(movie1);
+	System.out.println(repo.getAMovie(1));
+		
+	Assert.assertEquals(MOCK_OBJECT, repo.getAMovie(1));
+	}
 	
 	
 	@Test 

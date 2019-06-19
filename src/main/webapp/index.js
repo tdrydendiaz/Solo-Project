@@ -1,3 +1,7 @@
+
+const getAllMovies="http://http://35.246.26.121:8888/SoloProject/api/movie/getAllMovies"
+
+
 function makeRequest(method, url, body) {
 
     return new Promise((resolve, reject) => {
@@ -20,7 +24,7 @@ function makeRequest(method, url, body) {
 
   
   function getAllMovies(){
-    makeRequest("GET", "http://localhost:8080/SoloProject/api/movie/getAllMovies")
+    makeRequest("GET", getAllMovies)
     .then((request) => {
       console.log(request.responseText);
       // document.getElementById('result').innerText = request.responseText;
