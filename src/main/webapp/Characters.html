@@ -1,1 +1,62 @@
-DFGSDF
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+
+<script type="text/javascript" src="Characters.js">
+</script>
+<body>
+    <center>
+        <div class="container p-3">
+
+            <div class="row">
+                <div class="col p-2 display-3 font-weight-bold">
+                    Star Wars Characters
+                    <div class="col">
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+            <form name="api">
+                
+<input type="button" class="btn" onclick="getACharacter()" value="Get A Character">
+<input type="number" id="character">
+<br>
+                <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                    <button type="button" onclick="getAllCharacters()" class="btn btn-light" name="getallcharacters" value="getallCharacters" >Get All Movies </button>
+                                </div>
+    
+<input type="button" class="btn" onclick="deleteCharacter()" value="Delete a Character" >
+<input type="number" id="inputno">   
+
+
+
+  <br>
+  <div>
+    <input id="updateId" type="number">
+    <input id="updateName" type="text">
+    <input id="updateAct" type="text">
+    <input id="updatePower" type="number">
+    <input id="updateMor" type="text">
+    <input id="updateGen" type="text">
+    <input id="updateHome" type="text">
+
+    <input type="button" value="Update a Character" onclick="updateCharacter(updateId)">
+  </div>
+
+  <div>
+    <input type="button" value="Create a Character" onclick="createCharacter()">
+  </div>
+                <div id="result"> </div>
+                
+            </form>
+        </div>
+    </center>
+</body>
+
+
+</html>
