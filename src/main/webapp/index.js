@@ -21,7 +21,6 @@ function makeRequest(method, url, body) {
     });
   }
 
-
   
   function getAllMovies(){
     makeRequest("GET", getAllMovies)
@@ -64,4 +63,4 @@ tbody.innerHTML+=tr;
     req.send();
 
   }
-  
+  }
