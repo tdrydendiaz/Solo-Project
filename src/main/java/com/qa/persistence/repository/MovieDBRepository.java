@@ -61,15 +61,22 @@ public class MovieDBRepository implements MovieRepository {
 	@Transactional(TxType.REQUIRED)
 	@Override
 	public String updateMovie(int movieID, String movie) {
+		
 		Movie movieToUpdate = manager.find(Movie.class, movieID);
+		
 		Movie updatedMovie = util.getObjectForJSON(movie, Movie.class);
+		
+	
 		if (movieToUpdate != null) {
+			
 			movieToUpdate.setTitle(updatedMovie.getTitle());
 			movieToUpdate.setReleaseYear(updatedMovie.getReleaseYear());
 			movieToUpdate.setRunTime(updatedMovie.getRunTime());
 			movieToUpdate.setCertification(updatedMovie.getCertification());
 			movieToUpdate.setRating(updatedMovie.getRating());
+			
 			manager.persist(movieToUpdate);
+			
 			return "{\"message\": \"Movie successfully updated\"}";
 		} else {
 			return "{\"message\": \"Cannot find movie\"}";
