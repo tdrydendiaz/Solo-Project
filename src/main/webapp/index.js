@@ -68,24 +68,54 @@ function getAMovie() {
     .then(res => { console.log("Success") });
 }
  
-function updateMovie(){
-  let id = document.getElementById('id').value;
-    let id1 = document.getElementById('titl').value;
-      let id2 = document.getElementById('ry').value;
-        let id3 = document.getElementById('rt').value;
-        let id4 = document.getElementById('cer').value;
-        let id5 = document.getElementById('rat').value;
-        const text = {
-    title: "titl",
-    releaseYear: "ry",
-    runTime: "rt",
-    certification: "cer",
-    rating: "rat",
-        }
-  const obj1 = JSON.stringify(text);
-   makeRequest("PUT", `http://localhost:8080/SoloProject/api/movie/updateMovie/${id}`, obj1)
-    .then(res => { console.log("Success") });
 
+function updateMovie(id) {
+
+
+  let idVal = id.value;
+  let movtitle = document.getElementById("updateTitle").value;
+  let movReleaseYear = document.getElementById("updateYear").value;
+  let movRunTime = document.getElementById("updateRun").value;
+  let movCert = document.getElementById("updateCert").value;
+  let movRating = document.getElementById("updateRat").value;
+
+  const accObject = {
+    title: movtitle,
+    releaseYear: movReleaseYear,
+    runTime: movRunTime,
+    certification: movCert,
+    rating: movRating
+  }
+
+  makeRequest("PUT", `http://localhost:8080/SoloProject/api/movie/updateMovie/${idVal}`, JSON.stringify(accObject))
+  .then((request) => {
+    console.log(request.responseText)
+    document.getElementById('result').innerText = request.responseText;
+  });
+}
+
+function createMovie() {
+  let request = new XMLHttpRequest();
+  let movtitle = document.getElementById("updateTitle").value;
+  let movReleaseYear = document.getElementById("updateYear").value;
+  let movRunTime = document.getElementById("updateRun").value;
+  let movCert = document.getElementById("updateCert").value;
+  let movRating = document.getElementById("updateRat").value;
+
+  const movObject = {
+    title: movtitle,
+    releaseYear: movReleaseYear,
+    runTime: movRunTime,
+    certification: movCert,
+    rating: movRating
+  }
+  let accJSON = JSON.stringify(movObject);
+  request.onload = function(){
+    document.getElementById('result').innerText = request.responseText;
+  }
+  //creating an account as a JSON string
+  request.open("POST", "http://localhost:8080/SoloProject/api/movie/createMovie");
+  request.send(accJSON);
 }
 
 
