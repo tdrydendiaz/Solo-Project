@@ -24,6 +24,11 @@ public class MovieController {
 		return service.getAllMovies();
 	}
 
+
+	public void setService(MovieService service) {
+		this.service = service;
+	}
+
 	@Path("/getAMovie/{id}")
 	@GET
 	@Produces({ "application/json" })
@@ -51,6 +56,12 @@ public class MovieController {
 	public String updateMovie(@PathParam("id") int id, String movie) {
 		return service.updateMovie(id, movie);
 	}
+
+	public void setMovieService(MovieService service2) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 }
