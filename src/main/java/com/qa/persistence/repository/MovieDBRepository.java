@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
@@ -30,7 +29,7 @@ public class MovieDBRepository implements MovieRepository {
 		new JSONUtil();
 		Movie util = JSONUtil.getObjectForJSON(movie, Movie.class);
 		manager.persist(util);
-		return "{\"message\": \"movie sucessfully added\"}";
+		return "{\"message\": \"movie successfully added\"}";
 	}
 
 	
@@ -55,26 +54,44 @@ public class MovieDBRepository implements MovieRepository {
 	public String deleteMovie(int movieID) {
 		Movie movie= manager.find(Movie.class, movieID);
 	    manager.remove(movie);
-	    return "{\"message\": \"Movie sucessfully deleted\"}";
+	    return "{\"message\": \"Movie successfully deleted\"}";
 			
 		
 	}
 	@Transactional(TxType.REQUIRED)
 	@Override
 	public String updateMovie(int movieID, String movie) {
+		
 		Movie movieToUpdate = manager.find(Movie.class, movieID);
+		
 		Movie updatedMovie = util.getObjectForJSON(movie, Movie.class);
+		
+	
 		if (movieToUpdate != null) {
+			
 			movieToUpdate.setTitle(updatedMovie.getTitle());
 			movieToUpdate.setReleaseYear(updatedMovie.getReleaseYear());
 			movieToUpdate.setRunTime(updatedMovie.getRunTime());
 			movieToUpdate.setCertification(updatedMovie.getCertification());
 			movieToUpdate.setRating(updatedMovie.getRating());
+			
 			manager.persist(movieToUpdate);
+			
 			return "{\"message\": \"Movie successfully updated\"}";
 		} else {
 			return "{\"message\": \"Cannot find movie\"}";
 		}
 	}
+	
+	
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+	public void setUtil(JSONUtil jsonUtil) {
+		this.util = jsonUtil;
+	}
+	
+	
 
 }

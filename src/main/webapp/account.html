@@ -1,0 +1,54 @@
+<html>
+<head>
+
+</head>
+<body>
+<script type="text/javascript" src="accounts.js"></script>
+<script type="text/javascript" src="test.js"></script>
+<div id="header-box"></div>
+<p id="getAllAccounts"></p>
+
+<div id="getAnAccount">
+</div>
+<div id="createAnAccount">
+</div>
+<div id="deleteAccount">
+</div>
+
+
+
+<input type="button" class="btn" onclick="getAllAccounts()" value="Get all Accounts">
+<br>
+<input type="number" id="account">
+<input type="button" class="btn" onclick="getAnAccount()" value="Get an Account">
+<br>
+Id<input id="idno" type="number">
+<br>
+Account Number<input id="acc" type="number">
+<br>
+First Name<input id="fn" type="text">
+<br>
+Last Name<input id="ls" type="text">
+<br>
+<input type="button" class="btn" onclick="createAnAccount()" value="Create an Account">
+<br>
+<input type="number" id="inputno"> 
+<input type="button" class="btn" onclick="deleteAccount()" value="Delete an Account" >
+<br>
+<input type="button" class="btn" onclick="updateAccount()" value="Update an Account" >
+<input type="number" id="id1">
+<input type="number" id="accno">
+<input type="text" id="fn1">
+<input type="text" id="ln1">
+
+<form>
+Result<p name="results" id="result"> </p>
+<br>
+<input type="button" onclick="getAll()" value="Check Get All">
+<input type="button" onclick="getAcc()" value="Check Get One">
+
+</form>
+</body>
+
+
+</html>

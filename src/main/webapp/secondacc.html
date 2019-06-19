@@ -1,0 +1,45 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    <form>
+      <div>
+        <input id="accountId" type="text">
+        <input id="firstName" type="text">
+        <input id="lastName" type="text">
+        <input type="button" value="create an account" onclick="createAcc()">
+      </div>
+
+      <div>
+        <input id="getId" type="number">
+        <input type="button" value="get an account" onclick="getOne(getId)">
+        <p id='anAccount'> </p>
+      </div>
+
+      <div>
+        <input type="button" value="get all accounts" onclick="getAll()">
+        <p id='allAccounts'> </p>
+      </div>
+
+      <div>
+        <input id="delId" type="number">
+        <input type="button" value="delete an account" onclick="deleteAcc(delId)">
+      </div>
+      <br>
+      <div>
+        <input id="updateId" type="number">
+        <input id="updateAccNum" type="text">
+        <input id="updateFirst" type="text">
+        <input id="updateLast" type="text">
+        <input type="button" value="update an account" onclick="updateAcc(updateId)">
+      </div>
+
+      Result = <p id="result"> </p>
+    </form>
+    <script src="httprequest.js"></script>
+  </body>
+
+</html>

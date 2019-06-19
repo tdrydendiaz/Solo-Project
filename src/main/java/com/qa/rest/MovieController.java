@@ -14,9 +14,9 @@ import com.qa.business.service.MovieService;
 @Path("/movie")
 public class MovieController {
 
-
 	@Inject
 	private MovieService service;
+	
 	@Path("/getAllMovies")
 	@GET
 	@Produces({ "application/json" })

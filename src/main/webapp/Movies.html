@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+
+<script type="text/javascript" src="index.js">
+</script>
+<body>
+    <center>
+        <div class="container p-3">
+
+            <div class="row">
+                <div class="col p-2 display-3 font-weight-bold">
+                    Star Wars Movies
+                    <div class="col">
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+
+            <form name="api">
+                <input type="number" id="movie">
+<input type="button" class="btn" onclick="getAMovie()" value="Get A Movie">
+<br>
+                <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                    <button type="button" onclick="getAllMovies()" class="btn btn-light" name="getallmovies" value="getallmovies" >Get All Movies </button>
+                    <!-- <button type="button" onclick="getAllMovies()" class="btn btn-light" name="getamovie" value="getamovie" >Get A Movie </button>
+                    <button type="button" onclick="getAllMovies()" class="btn btn-light" name="updatemovie" value="updatemovie" >Update A Movie </button>
+                    <button type="button" onclick="getAllMovies()" class="btn btn-light" name="createamovie" value="createamovie" >CreateAMovie </button> -->
+
+                </div>
+    
+             
+                <div id="result"> </div>
+
+                <!-- <table id="movieTable">
+                        <tr>
+                          <th>MovieID</th>
+                          <th>Title</th>
+                          <th>Release Year</th>
+                          <th>Run Time</th>
+                          <th>Certification</th>
+                          <th>Rating</th>
+                          
+                        </tr>
+                      </table> -->
+
+                
+            </form>
+        </div>
+    </center>
+</body>
+
+
+</html>
