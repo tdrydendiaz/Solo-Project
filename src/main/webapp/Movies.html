@@ -21,34 +21,27 @@
             </div>
             <br>
 
-
             <form name="api">
-                <input type="number" id="movie">
+                
 <input type="button" class="btn" onclick="getAMovie()" value="Get A Movie">
+<input type="number" id="movie">
 <br>
                 <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
                     <button type="button" onclick="getAllMovies()" class="btn btn-light" name="getallmovies" value="getallmovies" >Get All Movies </button>
-                    <!-- <button type="button" onclick="getAllMovies()" class="btn btn-light" name="getamovie" value="getamovie" >Get A Movie </button>
-                    <button type="button" onclick="getAllMovies()" class="btn btn-light" name="updatemovie" value="updatemovie" >Update A Movie </button>
-                    <button type="button" onclick="getAllMovies()" class="btn btn-light" name="createamovie" value="createamovie" >CreateAMovie </button> -->
-
-                </div>
+                                </div>
     
-             
+<input type="button" class="btn" onclick="deleteMovie()" value="Delete a Movie" >
+<input type="number" id="inputno">   
+
+<br>
+<input type="button" class="btn" onclick="updateMovie()" value="Update a Movie" >
+<input type="number" id="id">
+<input type="text" id="titl">
+<input type="number" id="ry">
+<input type="number" id="rt">
+<input type="text" id="cer">
+<input type="number" id="rat">
                 <div id="result"> </div>
-
-                <!-- <table id="movieTable">
-                        <tr>
-                          <th>MovieID</th>
-                          <th>Title</th>
-                          <th>Release Year</th>
-                          <th>Run Time</th>
-                          <th>Certification</th>
-                          <th>Rating</th>
-                          
-                        </tr>
-                      </table> -->
-
                 
             </form>
         </div>
