@@ -39,7 +39,7 @@ public class CharacterDBRepositoryTest {
 	
 	private static final String MOCK_DATA_ARRAY = "[{\"characterID\":1,\"characterName\":\"Luke Skywalker\",\"actorName\":\"Mark Hamill\",\"powerRating\":90,\"morality\":\"Hero\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}]";
 
-	private static final String MOCK_OBJECT =  "{\"characterID\":1,\"characterName\":\"Luke Skywalker\",\"actorName\":\"Mark Hamill\",\"morality\":\"Hero\",\"powerRating\":\"90\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}";
+	private static final String MOCK_OBJECT =  "{\"characterID\":1,\"characterName\":\"Luke Skywalker\",\"actorName\":\"Mark Hamill\",\"powerRating\":90,\"morality\":\"Hero\",\"gender\":\"Male\",\"homeworld\":\"Tatooine\"}";
 	
 
 	@Before
@@ -60,6 +60,13 @@ public class CharacterDBRepositoryTest {
 	}
 	
 
+	@Test
+	public void testGetACharacter() {
+		Character char1 = new Character(1,"Luke Skywalker","Mark Hamill",90, "Hero","Male","Tatooine");
+		Mockito.when(manager.find(Character.class, 1)).thenReturn(char1);
+		Assert.assertEquals(MOCK_OBJECT, repo.getACharacter(1));
+	}
+	
 	@Test
 	public void testCreateCharacter() {
 		String reply = repo.createCharacter(MOCK_OBJECT);
