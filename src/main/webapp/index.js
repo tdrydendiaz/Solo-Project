@@ -1,5 +1,5 @@
 
-const getAllMovies="http://http://35.246.26.121:8888/SoloProject/api/movie/getAllMovies"
+const getMovies="http://http://35.246.26.121:8888/SoloProject/api/movie/getAllMovies"
 
 
 function makeRequest(method, url, body) {
@@ -23,7 +23,7 @@ function makeRequest(method, url, body) {
 
   
   function getAllMovies(){
-    makeRequest("GET", getAllMovies)
+    makeRequest("GET", getMovies)
     .then((request) => {
       console.log(request.responseText);
       // document.getElementById('result').innerText = request.responseText;
