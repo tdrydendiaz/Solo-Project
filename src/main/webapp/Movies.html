@@ -13,43 +13,32 @@
         <div class="container p-3">
 
             <div class="row">
-                <div class="col p-2 display-3 font-weight-bold">
+                <div class="col p-2 display-4 font-weight-bold">
                     Star Wars Movies
                     <div class="col">
                     </div>
                 </div>
 
             </div>
-            <br>
+
 
             <form name="api">
       
     <div class="row">   
- 
 
- 
-       
+            <div style="margin-left: 250px;">
 <input type="button" class="btn btn-dark" onclick="getAllMovies()" value="Get All Movies">
-
+</div>
 <input type="button" class="btn btn-dark" onclick="getAMovie()" value="Get A Movie"> 
 
 <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Input ID" type="number" id="movie">
 <input type="button" class="btn btn-dark" onclick="deleteMovie()" value="Delete a Movie" >
 <input placeholder="Input ID" class="form-control form-control-sm ml-3 w-10 col-2" type="number" id="inputno">   
 <div>
-
-
-  <br>
-  <!-- <div class="row">
-  <form class="form-inline">
-  <i class="col-xs-2" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-10 col-2" type="text" placeholder="Search"
-    aria-label="Search">
-    </div>  -->
-
+   </div>
 </form>
 
-  <div class="row">
+  <div class="row" style="margin-left: 110px;"></div>
     <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Input ID" id="updateId" type="number">
     <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Input Title" id="updateTitle" type="text">
     <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Year" id="updateYear" type="number">
@@ -58,11 +47,12 @@
     <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Rating" id="updateRat" type="number">
   </div>
 
-<br>
+
+<div style="margin-left: 10px;">
 <input type="button" class="btn btn-dark" value="Update a movie" onclick="updateMovie(updateId)">
     <input type="button" class="btn btn-dark" value="Create a movie" onclick="createMovie()">
-
-                <div id="result"> </div>
+</div>
+                <div style="margin-left: 200px;" id="result"> </div>
                 
             </form>
         </div>

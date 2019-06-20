@@ -124,7 +124,7 @@ function createMovie() {
   request.send(accJSON);
 }
 
-
+getAllMovies();
 
 
 
