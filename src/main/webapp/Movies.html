@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
+        <link href="Movies.css" rel="stylesheet" type="text/css" />
 </head>
 
 <script type="text/javascript" src="index.js">
@@ -22,17 +23,20 @@
             <br>
 
             <form name="api">
-                
-<input type="button" class="btn" onclick="getAMovie()" value="Get A Movie">
-<input type="number" id="movie">
-<br>
-                <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                    <button type="button" onclick="getAllMovies()" class="btn btn-light" name="getallmovies" value="getallmovies" >Get All Movies </button>
-                                </div>
-    
-<input type="button" class="btn" onclick="deleteMovie()" value="Delete a Movie" >
-<input type="number" id="inputno">   
+      
+    <div class="row">   
+ 
 
+ 
+       
+<input type="button" class="btn btn-dark" onclick="getAllMovies()" value="Get All Movies">
+
+<input type="button" class="btn btn-dark" onclick="getAMovie()" value="Get A Movie"> 
+
+<input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Input ID" type="number" id="movie">
+<input type="button" class="btn btn-dark" onclick="deleteMovie()" value="Delete a Movie" >
+<input placeholder="Input ID" class="form-control form-control-sm ml-3 w-10 col-2" type="number" id="inputno">   
+<div>
 
 
   <br>
@@ -44,6 +48,7 @@
     </div>  -->
 
 </form>
+
   <div class="row">
     <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Input ID" id="updateId" type="number">
     <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Input Title" id="updateTitle" type="text">
@@ -51,12 +56,12 @@
     <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Run Time" id="updateRun" type="number">
     <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Certification" id="updateCert" type="text">
     <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Rating" id="updateRat" type="number">
-    
   </div>
-<input type="button" value="Update a movie" onclick="updateMovie(updateId)">
-  <div>
-    <input type="button" value="create a movie" onclick="createMovie()">
-  </div>
+
+<br>
+<input type="button" class="btn btn-dark" value="Update a movie" onclick="updateMovie(updateId)">
+    <input type="button" class="btn btn-dark" value="Create a movie" onclick="createMovie()">
+
                 <div id="result"> </div>
                 
             </form>

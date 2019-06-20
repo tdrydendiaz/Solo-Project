@@ -6,6 +6,10 @@ function makeRequest(method, url, body) {
     request.send(body);
 
     request.onload = () => {
+      const bt=document.getElementById("result");
+      while (bt.firstChild){
+        bt.removeChild(bt.firstChild);
+      }
       if (request.status >= 200 && request.status <= 299) {
         resolve(request);
       } else {
@@ -54,7 +58,7 @@ function getACharacter() {
       tr += "<td> Character ID</td><td> Character Name </td><td>Actor Name</td><td>Power Rating</td><td> Morality</td><td>Gender</td><td> Homeworld</td></tr>";
 
       tr += "<td>" + obj.characterID + "</td><td>" + obj.characterName + "</td><td>" + obj.actorName + "</td><td>" + obj.powerRating + "</td><td>" + obj.morality + "</td><td>" + obj.gender + "</td><td>" + obj.homeworld+"</td></tr>";
-      //`http://localhost:8080/SoloProject/api/movie/getAMovie/${id}`
+      //`http://localhost:8080/SoloProject/api/character/getACharacter/${id}`
      tbody.innerHTML += tr;
     })
 }
@@ -116,3 +120,4 @@ function deleteCharacter(){
  makeRequest("DELETE", `http://localhost:8080/SoloProject/api/character/deleteCharacter/${id}`)
     .then(res => { console.log("Success") });
 }
+
