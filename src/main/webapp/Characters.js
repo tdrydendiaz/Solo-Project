@@ -44,18 +44,18 @@ function getACharacter() {
   makeRequest("GET", `http://localhost:8080/SoloProject/api/character/getACharacter/${id}`)
     .then((request) => {
       let res = document.getElementById('result');
-      res.innerHTML = request.responseText;
+     
       let node = document.createElement("tbody");
       node.setAttribute("id", "tbody");
       document.getElementById("result").appendChild(node);
-      let obj = JSON.parse(req.responseText);
+      let obj = JSON.parse(request.responseText);
       console.log(obj);
       let tr = "<tr>";
       tr += "<td> Character ID</td><td> Character Name </td><td>Actor Name</td><td>Power Rating</td><td> Morality</td><td>Gender</td><td> Homeworld</td></tr>";
 
-      tr += "<td>" + obj[i].characterID + "</td><td>" + obj[i].characterName + "</td><td>" + obj[i].actorName + "</td><td>" + obj[i].powerRating + "</td><td>" + obj[i].morality + "</td><td>" + obj[i].gender + "</td><td>" + obj[i].homeworld+"</td></tr>";
+      tr += "<td>" + obj.characterID + "</td><td>" + obj.characterName + "</td><td>" + obj.actorName + "</td><td>" + obj.powerRating + "</td><td>" + obj.morality + "</td><td>" + obj.gender + "</td><td>" + obj.homeworld+"</td></tr>";
       //`http://localhost:8080/SoloProject/api/movie/getAMovie/${id}`
-    
+     tbody.innerHTML += tr;
     })
 }
 

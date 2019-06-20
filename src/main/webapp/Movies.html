@@ -36,18 +36,26 @@
 
 
   <br>
-  <div>
-    <input id="updateId" type="number">
-    <input id="updateTitle" type="text">
-    <input id="updateYear" type="number">
-    <input id="updateRun" type="number">
-    <input id="updateCert" type="text">
-    <input id="updateRat" type="number">
-    <input type="button" value="Update a movie" onclick="updateMovie(updateId)">
-  </div>
+  <!-- <div class="row">
+  <form class="form-inline">
+  <i class="col-xs-2" aria-hidden="true"></i>
+  <input class="form-control form-control-sm ml-3 w-10 col-2" type="text" placeholder="Search"
+    aria-label="Search">
+    </div>  -->
 
+</form>
+  <div class="row">
+    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Input ID" id="updateId" type="number">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Input Title" id="updateTitle" type="text">
+    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Year" id="updateYear" type="number">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Run Time" id="updateRun" type="number">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Certification" id="updateCert" type="text">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Rating" id="updateRat" type="number">
+    
+  </div>
+<input type="button" value="Update a movie" onclick="updateMovie(updateId)">
   <div>
-    <input type="button" value="create an account" onclick="createMovie()">
+    <input type="button" value="create a movie" onclick="createMovie()">
   </div>
                 <div id="result"> </div>
                 
