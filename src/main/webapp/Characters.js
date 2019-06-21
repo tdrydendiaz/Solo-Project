@@ -109,6 +109,7 @@ function createCharacter() {
   }
   let accJSON = JSON.stringify(accObject);
   request.onload = function(){
+    console.log(request);
     document.getElementById('result').innerText = request.responseText;
   }
   //creating an account as a JSON string
