@@ -87,7 +87,9 @@ function updateCharacter(id) {
   .then((request) => {
     console.log(request.responseText)
     document.getElementById('result').innerText = request.responseText;
+    
   });
+getAllCharacters();
 }
 
 function createCharacter() {
