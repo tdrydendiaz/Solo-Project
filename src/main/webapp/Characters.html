@@ -54,26 +54,27 @@
                         <button type="button" class="btn btn-dark" onclick="getAllCharacters()" class="btn btn-light" name="getallcharacters" value="getallCharacters"> Get All Movies </button>
 
                         <input type="button" class="btn btn-dark" onclick="getACharacter()" value="Get A Character">
-                        <input class="form-control form-control-sm ml-3 w-10 col-1" type="number" id="character">
+                        <input placeholder="Input ID" class="form-control form-control-sm ml-3 w-10 col-1" type="number" id="character">
                         <input type="button" class="btn btn-dark" onclick="deleteCharacter()" value="Delete a Character">
-                        <input class="form-control form-control-sm ml-3 w-10 col-1" type="number" id="inputno">
+                        <input placeholder="Input ID" class="form-control form-control-sm ml-3 w-10 col-1" type="number" id="inputno">
                     </div>
                 </div>
 
                 <br>
                 <div class="row">
-                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateId" type="number">
-                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateName" type="text">
-                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateAct" type="text">
-                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updatePower" type="number">
-                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateMor" type="text">
-                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateGen" type="text">
-                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateHome" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Input ID" id="updateId" type="number">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Character" id="updateName" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Actor" id="updateAct" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Power Rating" id="updatePower" type="number">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Morality" id="updateMor" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Gender" id="updateGen" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Homeworld" id="updateHome" type="text">
 
 
                 </div>
                 <br>
-                  <div style="margin-right: 350px;">
+                
+                  <div style="margin-right: 300px;">
                 <input class="btn btn-dark" type="button" value="Update a Character" onclick="updateCharacter(updateId)">
 
                 <input type="button" class="btn btn-dark" value="Create a Character" onclick="createCharacter()">
