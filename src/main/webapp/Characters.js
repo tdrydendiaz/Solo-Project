@@ -24,7 +24,7 @@ function makeRequest(method, url, body) {
 }
 
 function getAllCharacters() {
-  makeRequest("GET", "http://localhost:8080/SoloProject/api/character/getAllCharacters" )
+  makeRequest("GET", "http://localhost:8888/SoloProject/api/character/getAllCharacters" )
     .then((request) => {
       console.log(request.responseText);
       // document.getElementById('result').innerText = request.responseText;
@@ -45,7 +45,7 @@ function getAllCharacters() {
 
 function getACharacter() {
   let id = document.getElementById('character').value;
-  makeRequest("GET", `http://localhost:8080/SoloProject/api/character/getACharacter/${id}`)
+  makeRequest("GET", `http://localhost:8888/SoloProject/api/character/getACharacter/${id}`)
     .then((request) => {
       let res = document.getElementById('result');
      
@@ -83,7 +83,7 @@ function updateCharacter(id) {
     homeworld: chaHome
   }
 
-  makeRequest("PUT", `http://localhost:8080/SoloProject/api/character/updateCharacter/${idVal}`, JSON.stringify(accObject))
+  makeRequest("PUT", `http://localhost:8888/SoloProject/api/character/updateCharacter/${idVal}`, JSON.stringify(accObject))
   .then((request) => {
     console.log(request.responseText)
     document.getElementById('result').innerText = request.responseText;
@@ -112,12 +112,12 @@ function createCharacter() {
     document.getElementById('result').innerText = request.responseText;
   }
   //creating an account as a JSON string
-  request.open("POST", "http://localhost:8080/SoloProject/api/character/createCharacter");
+  request.open("POST", "http://localhost:8888/SoloProject/api/character/createCharacter");
   request.send(accJSON);
 }
 function deleteCharacter(){
   let id = document.getElementById('inputno').value;
- makeRequest("DELETE", `http://localhost:8080/SoloProject/api/character/deleteCharacter/${id}`)
+ makeRequest("DELETE", `http://localhost:8888/SoloProject/api/character/deleteCharacter/${id}`)
     .then(res => { console.log("Success") });
 }
 
