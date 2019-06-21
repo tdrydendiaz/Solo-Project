@@ -1,5 +1,5 @@
 
-const getMovies = "http://localhost:8080/SoloProject/api/movie/getAllMovies"
+const getMovies = "api/movie/getAllMovies"
 
 http://35.228.151.103:8888/SoloProject/api/movie/getAllMovies
 function makeRequest(method, url, body) {
@@ -49,7 +49,7 @@ function getAllMovies() {
 
 function getAMovie() {
   let id = document.getElementById('movie').value;
-  makeRequest("GET", `http://localhost:8080/SoloProject/api/movie/getAMovie/${id}`)
+  makeRequest("GET", `api/movie/getAMovie/${id}`)
     .then((request) => {
       let res = document.getElementById('result');
       // res.innerHTML = request.responseText;
@@ -70,7 +70,7 @@ function getAMovie() {
 
  function deleteMovie(){
   let id = document.getElementById('inputno').value;
- makeRequest("DELETE", `http://localhost:8080/SoloProject/api/movie/deleteMovie/${id}`)
+ makeRequest("DELETE", `api/movie/deleteMovie/${id}`)
     .then(res => { console.log("Success") });
 }
  
@@ -93,7 +93,7 @@ function updateMovie(id) {
     rating: movRating
   }
 
-  makeRequest("PUT", `http://localhost:8080/SoloProject/api/movie/updateMovie/${idVal}`, JSON.stringify(accObject))
+  makeRequest("PUT", `api/movie/updateMovie/${idVal}`, JSON.stringify(accObject))
   .then((request) => {
     console.log(request.responseText)
     document.getElementById('result').innerText = request.responseText;
@@ -120,7 +120,7 @@ function createMovie() {
     document.getElementById('result').innerText = request.responseText;
   }
   //creating an account as a JSON string
-  request.open("POST", "http://localhost:8080/SoloProject/api/movie/createMovie");
+  request.open("POST", "api/movie/createMovie");
   request.send(accJSON);
 }
 
