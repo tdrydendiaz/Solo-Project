@@ -87,9 +87,9 @@ function updateCharacter(id) {
   .then((request) => {
     console.log(request.responseText)
     document.getElementById('result').innerText = request.responseText;
-    
+    getAllCharacters();
   });
-getAllCharacters();
+
 }
 
 function createCharacter() {
@@ -112,7 +112,7 @@ function createCharacter() {
   let accJSON = JSON.stringify(accObject);
   request.onload = function(){
     console.log(request);
-    document.getElementById('result').innerText = request.responseText;
+   getAllCharacters();
   }
   //creating an account as a JSON string
   request.open("POST", "api/character/createCharacter");
