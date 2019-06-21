@@ -97,6 +97,7 @@ function updateMovie(id) {
   .then((request) => {
     console.log(request.responseText)
     document.getElementById('result').innerText = request.responseText;
+    getAllMovies();
   });
 }
 
@@ -117,11 +118,13 @@ function createMovie() {
   }
   let accJSON = JSON.stringify(movObject);
   request.onload = function(){
-    document.getElementById('result').innerText = request.responseText;
+let fix=JSON.parse(request.responseText);
+    document.getElementById('result').innerText = fix;
   }
   //creating an account as a JSON string
   request.open("POST", "api/movie/createMovie");
   request.send(accJSON);
+  getAllMovies();
 }
 
 getAllMovies();
