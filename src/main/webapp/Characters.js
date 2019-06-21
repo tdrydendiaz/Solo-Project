@@ -121,3 +121,4 @@ function deleteCharacter(){
     .then(res => { console.log("Success") });
 }
 
+getAllCharacters();
