@@ -117,7 +117,7 @@ function createMovie() {
   }
   let accJSON = JSON.stringify(movObject);
   request.onload = function(){
-    document.getElementById('result').innerText = request.responseText.message;
+    document.getElementById('result').innerText = request.responseText;
   }
   //creating an account as a JSON string
   request.open("POST", "api/movie/createMovie");
