@@ -11,15 +11,12 @@ public class Movie{
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int movieID;
-	@Column (length = 20)
+	@Column (length = 60)
 	private String title;
-	@Column (length = 30)
 	private int releaseYear;
-	@Column (length = 30)
 	private int runTime;
 	@Column (length = 30)
 	private String certification;
-	@Column (length = 30)
 	private int rating;
 	
 	

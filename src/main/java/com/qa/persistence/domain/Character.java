@@ -11,17 +11,16 @@ public class Character {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int characterID;
-	@Column (length = 20)
+	@Column (length = 70)
 	private String characterName;
-	@Column (length = 30)
+	@Column (length = 70)
 	private String actorName;
-	@Column (length = 30)
 	private int powerRating;
 	@Column (length =20)
 	private String morality;
 	@Column (length =20)
 	private String gender;
-	@Column (length =20)
+	@Column (length =60)
 	private String homeworld;
 	
 	public Character(int characterID, String characterName, String actorName, int powerRating, String morality,
