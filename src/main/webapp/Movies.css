@@ -1,0 +1,15 @@
+   body { 
+    background-image: url("stormt.jpg"); /* The image used
+     background-color: #000000; /* Used if the image is unavailable */
+     height: 100%; /* You must set a specified height */
+     background-position: center; /* Center the image */
+     background-repeat: no-repeat; /* Do not repeat the image */
+     background-size: cover; /* Resize the background image to cover the entire container */
+   
+}   */
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}

@@ -1,1 +1,89 @@
-DFGSDF
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+         <link href="Character.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<script type="text/javascript" src="Characters.js">
+
+</script>
+
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="file:///C:/Users/Admin/Documents/Solo-Project/src/main/webapp/index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    
+                        <li class="nav-item active">
+                                <a class="nav-link" href="file:///C:/Users/Admin/Documents/Solo-Project/src/main/webapp/Movies.html">Movies <span class="sr-only">(current)</span></a>
+                              </li>
+    
+                        
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                    
+                      </form>
+                    </div>
+                  </nav>
+    <center>
+        <div class="container p-3">
+
+            <div class="row">
+                <div class="col p-2 display-3 font-weight-bold">
+                    Star Wars Characters
+                    <div class="col">
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+            <form name="api">
+                <div style="text-align: center">
+                   <div style="margin-left: 100px;">
+                    <div class="row">
+                          
+                        <button type="button" class="btn btn-dark" onclick="getAllCharacters()" class="btn btn-light" name="getallcharacters" value="getallCharacters"> Get All Movies </button>
+
+                        <input type="button" class="btn btn-dark" onclick="getACharacter()" value="Get A Character">
+                        <input class="form-control form-control-sm ml-3 w-10 col-1" type="number" id="character">
+                        <input type="button" class="btn btn-dark" onclick="deleteCharacter()" value="Delete a Character">
+                        <input class="form-control form-control-sm ml-3 w-10 col-1" type="number" id="inputno">
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateId" type="number">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateName" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateAct" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updatePower" type="number">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateMor" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateGen" type="text">
+                    <input class="form-control form-control-sm ml-3 w-10 col-1" id="updateHome" type="text">
+
+
+                </div>
+                <br>
+                  <div style="margin-right: 350px;">
+                <input class="btn btn-dark" type="button" value="Update a Character" onclick="updateCharacter(updateId)">
+
+                <input type="button" class="btn btn-dark" value="Create a Character" onclick="createCharacter()">
+
+                <div id="result"> </div>
+
+            </form>
+        </div>
+    </center>
+</body>
+
+
+</html>

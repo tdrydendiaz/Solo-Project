@@ -1,7 +1,7 @@
 
 const getMovies = "http://localhost:8080/SoloProject/api/movie/getAllMovies"
 
-
+http://35.228.151.103:8888/SoloProject/api/movie/getAllMovies
 function makeRequest(method, url, body) {
 
   return new Promise((resolve, reject) => {
@@ -10,6 +10,10 @@ function makeRequest(method, url, body) {
     request.send(body);
 
     request.onload = () => {
+      const bt=document.getElementById("result");
+      while (bt.firstChild){
+        bt.removeChild(bt.firstChild);
+      }
       if (request.status >= 200 && request.status <= 299) {
         resolve(request);
       } else {
@@ -23,6 +27,7 @@ function makeRequest(method, url, body) {
 
 
 function getAllMovies() {
+
   makeRequest("GET", getMovies)
     .then((request) => {
       console.log(request.responseText);
@@ -47,17 +52,18 @@ function getAMovie() {
   makeRequest("GET", `http://localhost:8080/SoloProject/api/movie/getAMovie/${id}`)
     .then((request) => {
       let res = document.getElementById('result');
-      res.innerHTML = request.responseText;
+      // res.innerHTML = request.responseText;
       let node = document.createElement("tbody");
       node.setAttribute("id", "tbody");
       document.getElementById("result").appendChild(node);
-      let obj = JSON.parse(req.responseText);
+      let obj = JSON.parse(request.responseText);
       console.log(obj);
       let tr = "<tr>";
-      tr += "<td> MovieID</td><td> Title</td><td>Release Year</td><td>Run Time</td><td> Certification</td><td>Rating</td></tr>";
+      tr += "<td>|-- MovieID--|</td><td> |----------Title----------|</td><td>|--Release Year--|</td><td>|--Run Time--|</td><td> |--Certification--|</td><td>|---Rating---|</td></tr>";
 
       tr += "<td>" + obj.movieID + "</td><td>" + obj.title + "</td><td>" + obj.releaseYear + "</td><td>" + obj.runTime + "</td><td>" + obj.certification + "</td><td>" + obj.rating + "</td></tr>";
       //`http://localhost:8080/SoloProject/api/movie/getAMovie/${id}`
+       tbody.innerHTML += tr;
     })
 }
 
@@ -118,7 +124,7 @@ function createMovie() {
   request.send(accJSON);
 }
 
-
+getAllMovies();
 
 
 

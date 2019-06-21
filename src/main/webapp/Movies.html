@@ -3,53 +3,75 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
+        <link href="Movies.css" rel="stylesheet" type="text/css" />
 </head>
 
 <script type="text/javascript" src="index.js">
 </script>
 <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="file:///C:/Users/Admin/Documents/Solo-Project/src/main/webapp/index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                                <a class="nav-link" href="file:///C:/Users/Admin/Documents/Solo-Project/src/main/webapp/Characters.html">Characters<span class="sr-only">(current)</span></a>
+                              </li>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                    
+                      </form>
+                    </div>
+                  </nav>
     <center>
         <div class="container p-3">
 
             <div class="row">
-                <div class="col p-2 display-3 font-weight-bold">
+                <div class="col p-2 display-4 font-weight-bold">
                     Star Wars Movies
                     <div class="col">
                     </div>
                 </div>
 
             </div>
-            <br>
+
 
             <form name="api">
-                
-<input type="button" class="btn" onclick="getAMovie()" value="Get A Movie">
-<input type="number" id="movie">
-<br>
-                <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                    <button type="button" onclick="getAllMovies()" class="btn btn-light" name="getallmovies" value="getallmovies" >Get All Movies </button>
-                                </div>
-    
-<input type="button" class="btn" onclick="deleteMovie()" value="Delete a Movie" >
-<input type="number" id="inputno">   
+      
+    <div class="row">   
 
+            <div style="margin-left: 250px;">
+<input type="button" class="btn btn-dark" onclick="getAllMovies()" value="Get All Movies">
+</div>
+<input type="button" class="btn btn-dark" onclick="getAMovie()" value="Get A Movie"> 
 
+<input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Input ID" type="number" id="movie">
+<input type="button" class="btn btn-dark" onclick="deleteMovie()" value="Delete a Movie" >
+<input placeholder="Input ID" class="form-control form-control-sm ml-3 w-10 col-2" type="number" id="inputno">   
+<div>
+   </div>
+</form>
 
-  <br>
-  <div>
-    <input id="updateId" type="number">
-    <input id="updateTitle" type="text">
-    <input id="updateYear" type="number">
-    <input id="updateRun" type="number">
-    <input id="updateCert" type="text">
-    <input id="updateRat" type="number">
-    <input type="button" value="Update a movie" onclick="updateMovie(updateId)">
+  <div class="row" style="margin-left: 110px;"></div>
+    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Input ID" id="updateId" type="number">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Input Title" id="updateTitle" type="text">
+    <input class="form-control form-control-sm ml-3 w-10 col-1" placeholder="Year" id="updateYear" type="number">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Run Time" id="updateRun" type="number">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Certification" id="updateCert" type="text">
+    <input class="form-control form-control-sm ml-3 w-10 col-2" placeholder="Rating" id="updateRat" type="number">
   </div>
 
-  <div>
-    <input type="button" value="create an account" onclick="createMovie()">
-  </div>
-                <div id="result"> </div>
+
+<div style="margin-left: 10px;">
+<input type="button" class="btn btn-dark" value="Update a movie" onclick="updateMovie(updateId)">
+    <input type="button" class="btn btn-dark" value="Create a movie" onclick="createMovie()">
+</div>
+                <div style="margin-left: 200px;" id="result"> </div>
                 
             </form>
         </div>
