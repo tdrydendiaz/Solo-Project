@@ -24,7 +24,7 @@ function makeRequest(method, url, body) {
 }
 
 function getAllCharacters() {
-  makeRequest("GET", "http://localhost:8080/SoloProject/api/character/getAllCharacters" )
+  makeRequest("GET", "api/character/getAllCharacters" )
     .then((request) => {
       console.log(request.responseText);
       // document.getElementById('result').innerText = request.responseText;
@@ -45,7 +45,7 @@ function getAllCharacters() {
 
 function getACharacter() {
   let id = document.getElementById('character').value;
-  makeRequest("GET", `http://localhost:8080/SoloProject/api/character/getACharacter/${id}`)
+  makeRequest("GET", `api/character/getACharacter/${id}`)
     .then((request) => {
       let res = document.getElementById('result');
      
@@ -83,11 +83,13 @@ function updateCharacter(id) {
     homeworld: chaHome
   }
 
-  makeRequest("PUT", `http://localhost:8080/SoloProject/api/character/updateCharacter/${idVal}`, JSON.stringify(accObject))
+  makeRequest("PUT", `api/character/updateCharacter/${idVal}`, JSON.stringify(accObject))
   .then((request) => {
     console.log(request.responseText)
     document.getElementById('result').innerText = request.responseText;
+    getAllCharacters();
   });
+
 }
 
 function createCharacter() {
@@ -109,15 +111,18 @@ function createCharacter() {
   }
   let accJSON = JSON.stringify(accObject);
   request.onload = function(){
-    document.getElementById('result').innerText = request.responseText;
+    console.log(request);
+   getAllCharacters();
   }
   //creating an account as a JSON string
-  request.open("POST", "http://localhost:8080/SoloProject/api/character/createCharacter");
+  request.open("POST", "api/character/createCharacter");
   request.send(accJSON);
 }
 function deleteCharacter(){
   let id = document.getElementById('inputno').value;
- makeRequest("DELETE", `http://localhost:8080/SoloProject/api/character/deleteCharacter/${id}`)
+ makeRequest("DELETE", `api/character/deleteCharacter/${id}`)
     .then(res => { console.log("Success") });
+    getAllCharacters();
 }
 
+getAllCharacters();
