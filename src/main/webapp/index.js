@@ -72,6 +72,7 @@ function getAMovie() {
   let id = document.getElementById('inputno').value;
  makeRequest("DELETE", `api/movie/deleteMovie/${id}`)
     .then(res => { console.log("Success") });
+  getAllMovies();  
 }
  
 

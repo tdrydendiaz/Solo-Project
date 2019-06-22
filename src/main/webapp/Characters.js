@@ -122,6 +122,7 @@ function deleteCharacter(){
   let id = document.getElementById('inputno').value;
  makeRequest("DELETE", `api/character/deleteCharacter/${id}`)
     .then(res => { console.log("Success") });
+    getAllCharacters();
 }
 
 getAllCharacters();
